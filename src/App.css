@@ -1,0 +1,30 @@
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.marquee {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+    animation: marquee 10s linear infinite;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "SF Compact", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.custom-swiper-button {
+    width: 30px;
+    /* Adjust the width */
+    height: 30px;
+    /* Adjust the height */
+    color: #fff;
+    /* Change color if needed */
+}
