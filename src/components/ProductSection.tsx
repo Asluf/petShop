@@ -8,7 +8,7 @@ const ProductSection = ({ products }: any) => {
         Hard to choose right product for your path?
       </h3>
       <div className="w-[100%] flex justify-between mb-2">
-        <h3 className="text-2xl font-bold">Our Products</h3>
+        <h3 className="text-2xl font-semibold">Our Products</h3>
         <button className="hidden md:flex flex justify-center items-center gap-4 border-2 hover:bg-[#003459] hover:text-white border-gray-800 px-6 py-3 rounded-full text-sm">
           <span>View More </span>
           <FaGreaterThan />

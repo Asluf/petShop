@@ -5,7 +5,7 @@ const PetSection = ({ pets }: any) => {
     <section className="my-8 px-[15px] md:px-[100px]">
       <h3 className="text-md mb-2">Whats New?</h3>
       <div className="w-[100%] flex justify-between mb-2">
-        <h3 className="text-xl font-bold">Take a Look at Some of Our Pets</h3>
+        <h3 className="text-2xl font-semibold">Take a Look at Some of Our Pets</h3>
         <button className="hidden md:flex flex justify-center items-center gap-4 border-2 hover:bg-[#003459] hover:text-white border-gray-800 px-6 py-3 rounded-full text-sm">
           <span>View More </span>
           <FaGreaterThan />

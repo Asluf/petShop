@@ -7,6 +7,8 @@ import ProductSection from "../components/ProductSection";
 import { KnowledgeSection } from "../components/KnowledgeSection";
 import { Newsletter } from "../components/NewsLetter";
 import { Footer } from "../components/Footer";
+import SellersSection from "../components/sellersSection";
+import BannerSection2 from "../components/BannerSection2";
 
 const Homepage = () => {
   const [pets, setPets] = useState([]);
@@ -43,16 +45,17 @@ const Homepage = () => {
 
   return (
     <div className="bg-gray-100">
-      {/* <Header /> */}
       <main className="w-[100vw]">
         <HeroSection />
         <PetSection pets={pets} />
         <BannerSection />
         <ProductSection products={products} />
+        <SellersSection />
+        <BannerSection2 />
         <KnowledgeSection />
-        <Newsletter />
+        {/* <Newsletter /> */}
+        <Footer />
       </main>
-      <Footer />
     </div>
   );
 };
