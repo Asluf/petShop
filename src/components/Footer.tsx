@@ -16,8 +16,8 @@ export const Footer = () => {
       className="py-8 md:py-[40px] px-[15px] md:px-[100px]"
     >
       <Newsletter />
-      <div className="flex justify-between items-center">
-        <nav className="space-x-16 font-semibold">
+      <div className="flex flex-col md:flex-row justify-between gap-4 items-center">
+        <nav className="flex gap-8 font-semibold">
           <Link to="/" className="hover:underline">
             Home
           </Link>
@@ -47,10 +47,10 @@ export const Footer = () => {
         </nav>
       </div>
       <hr className="my-6 border border-gray-300" />
-      <footer className="flex items-center justify-between bg-transparent">
-        <p>© 2023 Monito, All rights reserved.</p>
-        <img src={Logo} className="h-12" />
-        <div className="flex gap-6">
+      <footer className="flex flex-col md:flex-row gap-6 items-center justify-between bg-transparent">
+        <p className="order-3 md:order-none text-gray-500">© 2023 Monito, All rights reserved.</p>
+        <img src={Logo} className="h-12 order-1 md:order-none" />
+        <div className="flex gap-8 order-2 md:order-none text-gray-700">
           <a href="#" className="hover:underline">
             Terms of Service
           </a>

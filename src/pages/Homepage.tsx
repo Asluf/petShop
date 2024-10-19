@@ -8,9 +8,10 @@ import { KnowledgeSection } from "../components/KnowledgeSection";
 import { Footer } from "../components/Footer";
 import BannerSection2 from "../components/BannerSection2";
 import SellersSection from "../components/SellersSection";
+import { Pet } from "../models/Pet";
 
 const Homepage = () => {
-  const [pets, setPets] = useState([]);
+  const [pets, setPets] = useState<Pet[]>([]);
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -24,6 +25,7 @@ const Homepage = () => {
         "https://monitor-backend-rust.vercel.app/api/pets"
       );
       const data = await res.json();
+      console.log(data);
       setPets(data);
     } catch (error) {
       console.error("Error fetching pets:", error);
@@ -35,7 +37,6 @@ const Homepage = () => {
         "https://monitor-backend-rust.vercel.app/api/products"
       );
       const data = await res.json();
-      console.log(data);
       setProducts(data);
     } catch (error) {
       console.error("Error fetching products:", error);
@@ -43,7 +44,7 @@ const Homepage = () => {
   };
 
   return (
-    <div className="bg-gray-100">
+    <div className="bg-[#FDFDFD]">
       <main className="w-[100vw]">
         <HeroSection />
         <PetSection pets={pets} />

@@ -1,11 +1,18 @@
 import { FaGreaterThan } from "react-icons/fa6";
+import { Pet } from "../models/Pet";
 
-const PetSection = ({ pets }: any) => {
+interface PetSectionProps {
+  pets: Pet[];
+}
+
+const PetSection = ({ pets }: PetSectionProps) => {
   return (
     <section className="my-8 px-[15px] md:px-[100px]">
       <h3 className="text-md mb-2">Whats New?</h3>
       <div className="w-[100%] flex justify-between mb-2">
-        <h3 className="text-2xl font-semibold">Take a Look at Some of Our Pets</h3>
+        <h3 className="text-2xl font-semibold">
+          Take a Look at Some of Our Pets
+        </h3>
         <button className="hidden md:flex flex justify-center items-center gap-4 border-2 hover:bg-[#003459] hover:text-white border-gray-800 px-6 py-3 rounded-full text-sm">
           <span>View More </span>
           <FaGreaterThan />
@@ -14,7 +21,7 @@ const PetSection = ({ pets }: any) => {
 
       {/* Tailwind CSS grid layout */}
       <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 my-6">
-        {pets.map((pet: any) => (
+        {pets.map((pet: Pet) => (
           <div
             key={pet.id}
             className="bg-white shadow-lg rounded-lg overflow-hidden p-2"
@@ -22,7 +29,7 @@ const PetSection = ({ pets }: any) => {
             <img
               className="w-full h-64 md:h-[330px] object-cover"
               src={pet.image}
-              alt={pet.name}
+              alt={pet.breed}
             />
             <div className="p-4 text-sm md:text-md ">
               <h4 className="font-bold">
