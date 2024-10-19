@@ -5,10 +5,9 @@ import PetSection from "../components/PetSection";
 import BannerSection from "../components/BannerSection";
 import ProductSection from "../components/ProductSection";
 import { KnowledgeSection } from "../components/KnowledgeSection";
-import { Newsletter } from "../components/NewsLetter";
 import { Footer } from "../components/Footer";
-import SellersSection from "../components/sellersSection";
 import BannerSection2 from "../components/BannerSection2";
+import SellersSection from "../components/SellersSection";
 
 const Homepage = () => {
   const [pets, setPets] = useState([]);
@@ -53,7 +52,6 @@ const Homepage = () => {
         <SellersSection />
         <BannerSection2 />
         <KnowledgeSection />
-        {/* <Newsletter /> */}
         <Footer />
       </main>
     </div>
