@@ -47,7 +47,7 @@ const Homepage = () => {
     <div className="bg-[#FDFDFD]">
       <main className="w-[100vw]">
         <HeroSection />
-        <PetSection pets={pets} />
+        <PetSection pets={pets} from="Home Page" />
         <BannerSection />
         <ProductSection products={products} />
         <SellersSection />

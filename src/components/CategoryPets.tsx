@@ -2,12 +2,15 @@ import { Pet } from "../models/Pet";
 import { useEffect, useState } from "react";
 import { BiFilterAlt } from "react-icons/bi";
 import { IoMdCloseCircleOutline } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 interface CategoryPetsProps {
   allPets: Pet[];
 }
 
 const CategoryPets = ({ allPets }: CategoryPetsProps) => {
+  const navigate = useNavigate();
+
   const [showFilterPopup, setShowFilterPopup] = useState(false);
   const [filteredPets, setFilteredPets] = useState<Pet[]>([]);
   const [selectedGender, setSelectedGender] = useState<string>("all");
@@ -25,6 +28,10 @@ const CategoryPets = ({ allPets }: CategoryPetsProps) => {
   useEffect(() => {
     filterPets(selectedGender);
   }, [allPets, selectedGender]);
+
+  const handleCardClick = (pet: Pet) => {
+    navigate(`/pets/${pet.id}`, { state: { pet } });
+  };
 
   return (
     <section className="my-8 px-[15px] md:px-[100px]">
@@ -373,6 +380,7 @@ const CategoryPets = ({ allPets }: CategoryPetsProps) => {
             {filteredPets.map((pet: Pet) => (
               <div
                 key={pet.id}
+                onClick={() => handleCardClick(pet)}
                 className="bg-white shadow-lg rounded-lg overflow-hidden p-2"
               >
                 <img

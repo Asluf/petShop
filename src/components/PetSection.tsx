@@ -1,22 +1,34 @@
 import { FaGreaterThan } from "react-icons/fa6";
 import { Pet } from "../models/Pet";
+import { useNavigate } from "react-router-dom";
 
 interface PetSectionProps {
   pets: Pet[];
+  from: String;
 }
 
-const PetSection = ({ pets }: PetSectionProps) => {
+const PetSection = ({ pets, from }: PetSectionProps) => {
+  const navigate = useNavigate();
+
+  const handleCardClick = (pet: Pet) => {
+    navigate(`/pets/${pet.id}`, { state: { pet } });
+  };
+
   return (
     <section className="my-8 px-[15px] md:px-[100px]">
       <h3 className="text-md mb-2">Whats New?</h3>
       <div className="w-[100%] flex justify-between mb-2">
         <h3 className="text-2xl font-semibold">
-          Take a Look at Some of Our Pets
+          {from == "Home Page"
+            ? "Take a Look at Some of Our Pets"
+            : "See More Puppies"}
         </h3>
-        <button className="hidden md:flex flex justify-center items-center gap-4 border-2 hover:bg-[#003459] hover:text-white border-gray-800 px-6 py-3 rounded-full text-sm">
-          <span>View More </span>
-          <FaGreaterThan />
-        </button>
+        {from == "Home Page" && (
+          <button className="hidden md:flex flex justify-center items-center gap-4 border-2 hover:bg-[#003459] hover:text-white border-gray-800 px-6 py-3 rounded-full text-sm">
+            <span>View More </span>
+            <FaGreaterThan />
+          </button>
+        )}
       </div>
 
       {/* Tailwind CSS grid layout */}
@@ -24,6 +36,7 @@ const PetSection = ({ pets }: PetSectionProps) => {
         {pets.map((pet: Pet) => (
           <div
             key={pet.id}
+            onClick={() => handleCardClick(pet)}
             className="bg-white shadow-lg rounded-lg overflow-hidden p-2"
           >
             <img
